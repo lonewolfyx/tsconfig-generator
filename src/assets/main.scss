@@ -1,0 +1,16 @@
+:root {
+    @apply text-sm;
+}
+
+body {
+    @apply font-sans text-neutral-300 bg-[var(--color-bg-2)];
+}
+
+#root {
+    @apply w-full h-screen;
+}
+
+//::-webkit-scrollbar {
+//    width: 12px;
+//    height: 4px;
+//}

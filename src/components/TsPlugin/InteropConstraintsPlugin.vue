@@ -1,0 +1,38 @@
+<template>
+    <a-col :span="6">
+        <ItemTitle title="Interop Constraints"/>
+
+        <a-col :span="24" v-for="item in fields" :key="useId()">
+            <a-form-item :field="item" :extra="$t(`compilerOptions.${item}`)">
+                <a-switch type="round" v-model="queryParams.compilerOptions[item]"/>
+                <span class="pl-4 text-[var(--color-text-2)]">{{ item }}</span>
+            </a-form-item>
+        </a-col>
+
+    </a-col>
+</template>
+
+<script setup lang="ts">
+import {useId} from "vue";
+import ItemTitle from "@/components/ItemTitle/ItemTitle.vue";
+
+defineOptions({
+    name: 'InteropConstraintsPlugin'
+})
+
+const fields = [
+    'esModuleInterop',
+    'forceConsistentCasingInFileNames',
+    'isolatedDeclarations',
+    'isolatedModules',
+    'preserveSymlinks',
+    'allowSyntheticDefaultImports',
+    'verbatimModuleSyntax'
+]
+const {queryParams} = defineProps(['queryParams']);
+
+</script>
+
+<style scoped>
+
+</style>
