@@ -9,4 +9,4 @@
 * 🚀 快速生成 tsconfig.json 文件
 * ⚙️ 可自由定制的 tsconfig.json 选项 
 
-[![Tsconfig Generator](https://github.com/lonewolfyx/tsconfig-generator/blob/main/public/opengraph-image.jpg?raw=true)](https://tsconfig-generator.vercel.app)
+[![Tsconfig Generator](https://github.com/lonewolfyx/tsconfig-generator/blob/master/public/opengraph-image.png?raw=true)](https://tsconfig-generator.vercel.app)
