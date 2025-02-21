@@ -1,5 +1,5 @@
 <template>
-    <a-col :span="6">
+    <a-col :span="8">
         <ItemTitle title="Editor Support"/>
 
         <a-col :span="24" v-for="item in fields" :key="useId()">

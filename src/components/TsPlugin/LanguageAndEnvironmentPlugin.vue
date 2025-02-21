@@ -1,5 +1,5 @@
 <template>
-    <a-col :span="6">
+    <a-col :span="8">
         <ItemTitle title="Language and Environment"/>
 
         <a-col :span="24">

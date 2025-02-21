@@ -1,5 +1,5 @@
 <template>
-    <div class="flex-1 p-4 h-full col-span-2 overflow-x-hidden">
+    <div class="flex-1 p-4 h-100vh xl:col-span-2 xl:overflow-auto">
         <a-form :model="queryParams" label-align="left" layout="vertical">
             <a-row :gutter="24">
                 <TargetPlugin :queryParams="queryParams"/>
