@@ -1,8 +1,8 @@
 <template>
     <a-layout class="relative flex flex-col flex-1 m-0 p-0 h-full">
         <Header/>
-        <a-layout-content class="relative h-full pt-[50px]">
-            <div class="grid grid-cols-3 tsconfig-container">
+        <a-layout-content class="relative min-h-full pt-[50px]">
+            <div class="grid grid-cols-1 xl:grid-cols-3 tsconfig-container">
                 <TsConfiguration/>
                 <CodeReview/>
             </div>

@@ -1,9 +1,14 @@
 <template>
-    <a-card title="tsconfig.json" class="rounded-lg m-4" ref="codeRef">
+    <a-card title="tsconfig.json" class="lg:col-span-1 rounded-lg m-4" ref="codeRef">
         <template #extra>
-            <a-button @click="handleClipboard">
+            <a-button @click="handleClipboard" class="mr-2">
                 <template #icon>
                     <IconCopy/>
+                </template>
+            </a-button>
+            <a-button @click="handleDownload">
+                <template #icon>
+                  <IconDownload />
                 </template>
             </a-button>
         </template>
@@ -21,7 +26,7 @@ import {useTsConfigStore} from "@/stores/tsconfig.ts";
 import {Notification} from '@arco-design/web-vue';
 import {storeToRefs} from "pinia";
 import {removeEmptyValues, sort} from "@/utils";
-import {IconCopy} from '@arco-design/web-vue/es/icon';
+import {IconCopy, IconDownload} from '@arco-design/web-vue/es/icon';
 
 defineOptions({
     name: 'CodeReview'
@@ -38,6 +43,20 @@ const handleClipboard = () => {
         content: 'Replicating Success 🎉 🎉 🎉 🎉',
         closable: true,
     })
+}
+
+const handleDownload = () => {
+  const jsonString = JSON.stringify(sort(removeEmptyValues(queryParams.value)), null, 2);
+  const blob = new Blob([jsonString], { type: 'application/json' });
+
+  const a = document.createElement('a');
+  a.style.display = 'none';
+  a.href = URL.createObjectURL(blob);
+  a.download = 'tsconfig.json';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(a.href);
 }
 </script>
 
