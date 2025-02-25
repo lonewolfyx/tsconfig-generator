@@ -23,7 +23,7 @@
                 :extra="$t(`compilerOptions.importsNotUsedAsValues`)"
             >
                 <a-select
-                    v-model="queryParams.compilerOptions.lib"
+                    v-model="queryParams.compilerOptions.importsNotUsedAsValues"
                     allow-clear
                     :placeholder="createPlaceholder('importsNotUsedAsValues')"
                 >
